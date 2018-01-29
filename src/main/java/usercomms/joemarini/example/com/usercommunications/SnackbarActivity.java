@@ -43,7 +43,19 @@ public class SnackbarActivity extends AppCompatActivity
 
     private void showActionSnackbar() {
         // TODO: Create a snackbar that has an action item
+        Snackbar snackbar=Snackbar.make(findViewById(R.id.myCoordinatorLayout),
+                "This is action love",Snackbar.LENGTH_LONG);
+        snackbar.setAction("a action", new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"Snack bar action",
+                        Toast.LENGTH_SHORT).show();
+            }
 
+        });
+
+        snackbar.setActionTextColor(Color.RED);
+        snackbar.show();
     }
 
 }
