@@ -51,7 +51,8 @@ DatePickerDialog datePicker= new DatePickerDialog(this,new DatePickerDialog.OnDa
     }
 },cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH));
                 // TODO: Set the title and show the dialog
-
+                datePicker.setTitle("pick a adate ?");
+                datePicker.show();
                 break;
             case R.id.btnShowChoiceDialog:
                 showChoiceDialog();
