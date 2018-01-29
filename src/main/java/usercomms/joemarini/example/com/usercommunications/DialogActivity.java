@@ -49,7 +49,7 @@ DatePickerDialog datePicker= new DatePickerDialog(this,new DatePickerDialog.OnDa
                 String.format("pice day : %d ,month: %d ,year %d",
                 dofMont,mofYear,year))
     }
-});
+},cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH));
                 // TODO: Set the title and show the dialog
 
                 break;
