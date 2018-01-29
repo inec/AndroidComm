@@ -37,10 +37,19 @@ public class DialogActivity extends AppCompatActivity
                 break;
             case R.id.btnShowDatePicker:
                 // TODO: Get a calendar instance
-
+Calendar cal=Calendar.getInstance();
 
                 // TODO: Create a DatePickerDialog
+DatePickerDialog datePicker= new DatePickerDialog(this,new DatePickerDialog.OnDateSetListener(){
 
+    @Override
+    public void onDateSet(DatePicker datePicker, int year, int mofYear, int dofMont) {
+
+        Log.i(TAG,
+                String.format("pice day : %d ,month: %d ,year %d",
+                dofMont,mofYear,year))
+    }
+});
                 // TODO: Set the title and show the dialog
 
                 break;
