@@ -38,6 +38,7 @@ public class DialogActivity extends AppCompatActivity
             case R.id.btnShowDatePicker:
                 // TODO: Get a calendar instance
 
+
                 // TODO: Create a DatePickerDialog
 
                 // TODO: Set the title and show the dialog
@@ -55,6 +56,7 @@ public class DialogActivity extends AppCompatActivity
     private void showSimpleDialog() {
         SimpleDialogFragment simpleDialog = new SimpleDialogFragment();
         // TODO: Use setCancelable() to make the dialog non-cancelable
+
         simpleDialog.show(getSupportFragmentManager(), "SimpleDialogFragment");
     }
 
