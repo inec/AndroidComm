@@ -29,15 +29,18 @@ public class NotificationActivity extends AppCompatActivity
         Notification.Builder builder= new Notification.Builder(this);
         // TODO: Create the intent that will start the ResultActivity when the user
         // taps the notification or chooses an action button
-
+Intent intent=new Intent(this,NotificationActivity.class);
+        PendingIntent pendingIntent=PendingIntent.getActivity(this,NOTIFY_ID,
+               intent,PendingIntent.FLAG_CANCEL_CURRENT );
 
         // Store the notification ID so we can cancel it later in the ResultActivity
 
         // TODO: Set the three required items all notifications must have
-
+builder.setSmallIcon(R.drawable.ic_stat_sample_notification);
+        builder.setContentTitle("Sample notifiction");
+        builder.setContentText("This is a sample notifcation");
 
         // TODO: Set the notification to cancel when the user taps on it
-
 
         // TODO: Set the large icon to be our app's launcher icon
 
