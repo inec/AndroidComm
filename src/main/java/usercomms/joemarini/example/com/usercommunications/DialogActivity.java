@@ -14,7 +14,7 @@ import usercomms.joemarini.example.com.usercommunications.Dialogs.SingleChoiceDi
 import usercomms.joemarini.example.com.usercommunications.Dialogs.SimpleDialogFragment;
 
 public class DialogActivity extends AppCompatActivity
-    implements View.OnClickListener {
+    implements View.OnClickListener ,SimpleDialogFragment.SimpleDialogListener{
 
     private final String TAG = "AUC_DLG_ACTIVITY";
     @Override
@@ -78,6 +78,21 @@ DatePickerDialog datePicker= new DatePickerDialog(this,new DatePickerDialog.OnDa
     private void showChoiceDialog() {
         SingleChoiceDialogFragment complexDialog = new SingleChoiceDialogFragment();
         complexDialog.show(getSupportFragmentManager(),"SingleChoiceDialogFragment");
+    }
+
+    @Override
+    public void onPositiveResult(DialogFragment dlg) {
+        Log.i(TAG,"postive result t ");
+    }
+
+    @Override
+    public void onNegativeResult(DialogFragment dlg) {
+        Log.i(TAG,"negative  result t ");
+    }
+
+    @Override
+    public void onNeutralResult(DialogFragment dlg) {
+        Log.i(TAG,"neutrual result t  ");
     }
 
     //TODO: implement dialog listener interface functions
