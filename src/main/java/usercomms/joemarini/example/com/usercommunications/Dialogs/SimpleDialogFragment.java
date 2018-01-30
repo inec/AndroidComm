@@ -11,9 +11,13 @@ import android.util.Log;
 public class SimpleDialogFragment extends DialogFragment {
     private final String TAG = "AUC_SIMPLE";
 
+    private SimpleDialogListener mHost;
+
     // TODO: Implement an interface for hosts to get callbacks
-public interface SimpleDialogListener{
-            public void onPositive(DialogFragment dlg);
+    public interface SimpleDialogListener{
+            public void onPositiveResult(DialogFragment dlg);
+        public void onNegativeResult(DialogFragment dlg);
+        public void onNeutralResult(DialogFragment dlg);
     }
 
     @Override
@@ -31,6 +35,7 @@ builder.setPositiveButton("sure", new DialogInterface.OnClickListener() {
     @Override
     public void onClick(DialogInterface dialogInterface, int i) {
         Log.i(TAG,"postive sleect ");
+        mHost.onPositiveResult(SimpleDialogFragment.this);
     }
 });
 
@@ -38,6 +43,7 @@ builder.setPositiveButton("sure", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Log.i(TAG,"negative  sleect ");
+                mHost.onNegativeResult(SimpleDialogFragment.this);
             }
         });
 
@@ -46,6 +52,7 @@ builder.setPositiveButton("sure", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Log.i(TAG,"netural sleect ");
+                mHost.onNegativeResult(SimpleDialogFragment.this);
             }
         });
         // TODO: return the created dialog
@@ -61,5 +68,9 @@ builder.setPositiveButton("sure", new DialogInterface.OnClickListener() {
 }
 
     // TODO: Override onAttach to get Activity instance
-
+@Override
+    public void onAttach(Activity activity){
+        super.onAttach(activity);
+    mHost=(SimpleDialogListener)activity;
+    }
 }
