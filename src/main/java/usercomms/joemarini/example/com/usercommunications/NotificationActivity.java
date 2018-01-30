@@ -56,10 +56,13 @@ builder.setContentIntent(pendingIntent);
         // TODO: Add an expanded layout to the notification
 NotificationCompat.BigTextStyle bigTextStyle=new NotificationCompat.BigTextStyle();
         bigTextStyle.setBigContentTitle("This is  a big notification");
+bigTextStyle.bigText(getResources().getString(R.string.LongMsg));
+    builder.setStyle(bigTextStyle);
 
         // TODO: Add action buttons to the Notification if they are supported
         // Use the same PendingIntent as we use for the main notification action
-
+builder.addAction(R.mipmap.ic_launcher,"Action 1",pendingIntent);
+        builder.addAction(R.mipmap.ic_launcher,"Action 2",pendingIntent);
         // TODO: Set the lock screen visibility of the notification
 
 
