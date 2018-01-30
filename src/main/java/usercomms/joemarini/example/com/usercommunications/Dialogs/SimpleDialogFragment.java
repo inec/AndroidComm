@@ -12,7 +12,9 @@ public class SimpleDialogFragment extends DialogFragment {
     private final String TAG = "AUC_SIMPLE";
 
     // TODO: Implement an interface for hosts to get callbacks
-
+public interface SimpleDialogListener{
+            public void onPositive(DialogFragment dlg);
+    }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
