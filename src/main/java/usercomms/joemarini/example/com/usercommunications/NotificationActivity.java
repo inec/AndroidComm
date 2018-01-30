@@ -41,15 +41,17 @@ builder.setSmallIcon(R.drawable.ic_stat_sample_notification);
         builder.setContentText("This is a sample notifcation");
 
         // TODO: Set the notification to cancel when the user taps on it
-
+builder.setAutoCancel(true);
         // TODO: Set the large icon to be our app's launcher icon
-
+builder.setLargeIcon(BitmapFactory.decodeResource(getResources(),
+        R.mipmap.ic_launcher));
 
         // TODO: Set the small subtext message
+        builder.setSubText("Tap to view")
 
 
         // TODO: Set the content intent to launch our result activity
-
+builder.setContentInfo(pendingIntent);
 
         // TODO: Add an expanded layout to the notification
 
@@ -61,7 +63,9 @@ builder.setSmallIcon(R.drawable.ic_stat_sample_notification);
 
 
         // TODO: Build the finished notification and then display it to the user
-
+Notification notification=builder.build();
+        NotificationManager mgr=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        mgr.notify(NOTIFY_ID,notification);
     }
 
     @Override
