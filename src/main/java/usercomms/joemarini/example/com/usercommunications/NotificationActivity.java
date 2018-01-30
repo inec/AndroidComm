@@ -30,6 +30,7 @@ public class NotificationActivity extends AppCompatActivity
         // TODO: Create the intent that will start the ResultActivity when the user
         // taps the notification or chooses an action button
 Intent intent=new Intent(this,NotificationActivity.class);
+        intent.putExtra("notifyID",NOTIFY_ID);
         PendingIntent pendingIntent=PendingIntent.getActivity(this,NOTIFY_ID,
                intent,PendingIntent.FLAG_CANCEL_CURRENT );
 
