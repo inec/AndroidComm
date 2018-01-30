@@ -47,11 +47,11 @@ builder.setLargeIcon(BitmapFactory.decodeResource(getResources(),
         R.mipmap.ic_launcher));
 
         // TODO: Set the small subtext message
-        builder.setSubText("Tap to view")
+        builder.setSubText("Tap to view");
 
 
         // TODO: Set the content intent to launch our result activity
-builder.setContentInfo(pendingIntent);
+builder.setContentIntent(pendingIntent);
 
         // TODO: Add an expanded layout to the notification
 
